@@ -41,8 +41,8 @@ void upsilon4()
  // ---------------*----------------------------------------------------*----------------------------------------------------  
  
         //Declarando as variaveis
-        
-		  std::vector<double>* leadingMuon_Pt = new std::vector<double> ();
+   
+      std::vector<double>* leadingMuon_Pt = new std::vector<double> ();
 	    
       std::vector<double>* leadingMuon_Eta = new std::vector<double> ();
 	    
@@ -67,9 +67,10 @@ void upsilon4()
 //---------------*---------------------------------------------------*----------------------------------------------------                 
          
         //TLorentzVector P/ os Dimuons
-     	 
-		     TLorentzVector Muons1;
-         TLorentzVector Muons2;
+     
+        TLorentzVector Muons1;
+        
+	TLorentzVector Muons2;
 
  //---------------*---------------------------------------------------*----------------------------------------------------//               
        //Quantidades Cinematicas       
