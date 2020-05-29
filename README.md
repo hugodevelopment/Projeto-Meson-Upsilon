@@ -419,4 +419,6 @@ void upsilon4()
 }
 
 
+Ao executarmos no prompt do ROOT, teremos o seguinte canvas:
 
+![Histogramas1](https://user-images.githubusercontent.com/62472486/83265225-90d17080-a197-11ea-8805-e6df9b24cc22.png)
