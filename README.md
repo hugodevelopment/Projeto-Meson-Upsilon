@@ -73,7 +73,8 @@ void upsilon4()
 	TLorentzVector Muons2;
 
  //---------------*---------------------------------------------------*----------------------------------------------------//               
-       //Quantidades Cinematicas       
+       
+       // Quantidades Cinematicas       
         
         double M = 0.;
         
@@ -85,7 +86,7 @@ void upsilon4()
 
 //---------------*---------------------------------------------------*----------------------------------------------------//        
         
-        //Criando os histogramas para as quantidades cinematicas
+        // Criando os histogramas para as quantidades cinemáticas
 
 //---------------*---------------------------------------------------*----------------------------------------------------//         
         
@@ -142,17 +143,17 @@ void upsilon4()
 	
         h_DimuonsCargasOpostas_M -> SetName("h_DimuonsOppositeCharge_M");
 
-//---------------*---------------------------------------------------*----------------------------------------------------                
-       
-  // Histograma para o momemtum tranversal com 100 bins e intervalo  a 50
+//---------------*---------------------------------------------------*------------------------------------------------------//                
+         
+	 // Histograma para o momemtum tranversal com 100 bins e intervalo  a 50
 	
-  TH1F* h_DimuonsCargasOpostas_Pt = new TH1F("h_DimuonsOppositeCharge_Pt","h_DimuonsOppositeCharge_Pt",100,0,50);
+        TH1F* h_DimuonsCargasOpostas_Pt = new TH1F("h_DimuonsOppositeCharge_Pt","h_DimuonsOppositeCharge_Pt",100,0,50);
 	
-  h_DimuonsCargasOpostas_Pt->SetTitle("Distribuicao Pt dos muons; #mu#mu p_{T} [GeV] ; Eventos ");
+        h_DimuonsCargasOpostas_Pt->SetTitle("Distribuicao Pt dos muons; #mu#mu p_{T} [GeV] ; Eventos ");
 	
-  h_DimuonsCargasOpostas_Pt->SetName("h_DimuonsOppositeCharge_Pt");
+        h_DimuonsCargasOpostas_Pt->SetName("h_DimuonsOppositeCharge_Pt");
 
-//---------------*---------------------------------------------------*----------------------------------------------------                
+//---------------*---------------------------------------------------*----------------------------------------------------//                
        
        // Histograma para o Eta com 100 bins e intervalo -4 a 4
 	
@@ -162,11 +163,11 @@ void upsilon4()
 	
        h_DimuonsCargasOpostas_Eta->SetName("h_DimuonsOppositeCharge_Eta");
  
- //---------------*---------------------------------------------------*----------------------------------------------------                
+ //---------------*---------------------------------------------------*-----------------------------------------------------//                
         
         // Histograma para a rapidez com 100 bins intervalo de -4 a 4
 	
-       TH1F* h_DimuonsCargasOpostas_Rapidity = new TH1F("h _DimuonsOppositeCharge_Rapidity","h_DimuonsOppositeCharge_Rapidity",100,-4,4);
+       TH1F* h_DimuonsCargasOpostas_Rapidity = new TH1F("h_DimuonsOppositeCharge_Rapidity","h_DimuonsOppositeCharge_Rapidity",100,-4,4);
 	
        h_DimuonsCargasOpostas_Rapidity->SetTitle("Distribuicao Rapidez dos muons; y ; Eventos ");
 	
@@ -232,17 +233,17 @@ void upsilon4()
         
         Muons2.SetPtEtaPhiM(trailingMuon_Pt->at(i), trailingMuon_Eta->at(i), trailingMuon_Phi->at(i), trailingMuon_Mass->at(i));
 
-//---------------*---------------------------------------------------*----------------------------------------------------         			
+//---------------*---------------------------------------------------*--------------------------------------------------------//         			
                         
       //Calculo das quantidades cinematicas
 			
       M = (Muons1 + Muons2).Mag();	                 //Massa invariante dos pares de muons 
 			
-      Pt = (Muons1 + Muons2).Pt();                   //Momemtum tranverso o par de muons
+      Pt = (Muons1 + Muons2).Pt();                      //Momemtum tranverso o par de muons
 			
-      Eta = (Muons1 + Muons2).Eta();                  //Pseudorapidez(Eta) do par de muons
+      Eta = (Muons1 + Muons2).Eta();                   //Pseudorapidez(Eta) do par de muons
 			
-      Rapidity = (Muons1 + Muons2).Rapidity();       //Rapidez P/ o par de muons
+      Rapidity = (Muons1 + Muons2).Rapidity();        //Rapidez P/ o par de muons
 			
  //---------------*----------------------------------------------------*----------------------------------------------------//
    
@@ -263,12 +264,12 @@ void upsilon4()
 
 // ------------------------------------------------*--------------------------------*-------------------------------------//                       
 
-// Se leadingMuon_Charge for diferente de trailingMuon_Charge, continuar
+       //Se leadingMuon_Charge for diferente de trailingMuon_Charge, continuar
 
        if ( leadingMuon_Charge->at(i) != trailingMuon_Charge->at(i) )  
 			
         {
-				count_OppositeCharge_pythia++;
+	 count_OppositeCharge_pythia++;
 				
         h_DimuonsCargasOpostas_M->Fill(M)[Mag];
 				
@@ -279,142 +280,142 @@ void upsilon4()
         h_DimuonsCargasOpostas_Rapidity->Fill(Rapidity)[Rapidity];
         }
 
-// ----------*----------------------------------------------------*----------------------------------------------------
+// ----------*----------------------------------------------------*----------------------------------------------------//
         
-  //Creating Canvas
+       //Creating Canvas
 	
-  TCanvas* c2 = new TCanvas("c2","Canvas 2 - behavior of the dimuons after quality selection",1200,600);
+       TCanvas* c2 = new TCanvas("c2","Canvas 2 - behavior of the dimuons after quality selection",1200,600);
 	
-  c2->Divide(2,2);
+      c2->Divide(2,2);
 	
-  c2->cd(1);
+      c2->cd(1);
  
- //---------------*---------------------------------------------------*----------------------------------------------------                
+ //---------------*---------------------------------------------------*----------------------------------------------------//                
   
-  //Editando o histograma da massa
+      //Editando o histograma da massa
 	
-  h1_Massa->SetLineColor(kRed);
+     h1_Massa->SetLineColor(kRed);
 	
-  h_DimuonsCargasOpostas_M->SetLineColor(kBlue);
+     h_DimuonsCargasOpostas_M->SetLineColor(kBlue);
 
- //---------------*---------------------------------------------------*----------------------------------------------------                      
+ //---------------*---------------------------------------------------*----------------------------------------------------//                     
   
-  // Adicionando a legenda  
+       // Adicionando a legenda  
   
-  TLegend* leg_dimuons_M = new TLegend(0.75,0.81,0.97,0.97);
+      TLegend* leg_dimuons_M = new TLegend(0.75,0.81,0.97,0.97);
 	
-  leg_dimuons_M->SetFillColor(kWhite);
+     leg_dimuons_M->SetFillColor(kWhite);
 	
-  leg_dimuons_M->SetFillStyle(1001);
+      leg_dimuons_M->SetFillStyle(1001);
 	
-  leg_dimuons_M->AddEntry(h_DimuonsCargasOpostas_M,"#mu^{+}#mu^{-}","L");
+      leg_dimuons_M->AddEntry(h_DimuonsCargasOpostas_M,"#mu^{+}#mu^{-}","L");
 	
-  //---------------*---------------------------------------------------*----------------------------------------------------         
+  //---------------*---------------------------------------------------*----------------------------------------------------//         
 	
-  //Desenhando o histograma da massa
+      //Desenhando o histograma da massa
 	
-  h1_Massa->Draw();
+       h1_Massa->Draw();
 	
-  h_DimuonsCargasOpostas_M->Draw("sames");
+       h_DimuonsCargasOpostas_M->Draw("sames");
 	
-  leg_dimuons_M->Draw();
+        leg_dimuons_M->Draw();
 
-//---------------*---------------------------------------------------*----------------------------------------------------         
+//---------------*---------------------------------------------------*----------------------------------------------------//         
    
-   c2->cd(2);  
+    c2->cd(2);  
  
- //Editando o histograma da momemtum transversal 
+     //Editando o histograma da momemtum transversal 
 	
-  h1_Pt->SetLineColor(kRed);
+    1_Pt->SetLineColor(kRed);
 	
-  h_DimuonsCargasOpostas_Pt->SetLineColor(kBlue);
+    h_DimuonsCargasOpostas_Pt->SetLineColor(kBlue);
 	
 //---------------*---------------------------------------------------*----------------------------------------------------//         	
   
-  //Adicionando a legenda
+       //Adicionando a legenda
         
 	TLegend* leg_dimuons_Pt = new TLegend(0.75,0.81,0.97,0.97);
 	
-  leg_dimuons_Pt->SetFillColor(kWhite);
+        leg_dimuons_Pt->SetFillColor(kWhite);
 	
-  leg_dimuons_Pt->SetFillStyle(1001);
+        leg_dimuons_Pt->SetFillStyle(1001);
 	
-  leg_dimuons_Pt->AddEntry(h_DimuonsCargasOpostas_Pt,"#mu^{+}#mu^{-} ","L");
+        leg_dimuons_Pt->AddEntry(h_DimuonsCargasOpostas_Pt,"#mu^{+}#mu^{-} ","L");
 	
-//---------------*---------------------------------------------------*----------------------------------------------------         	
-   
-  //Desenhando o histograma do momemtum tranversal
+//---------------*---------------------------------------------------*----------------------------------------------------//         	
+    
+      //Desenhando o histograma do momemtum tranversal
 	
-  h1_Pt->Draw();
+     h1_Pt->Draw();
 	
-  h_DimuonsCargasOpostas_Pt->Draw("sames");
+    h_DimuonsCargasOpostas_Pt->Draw("sames");
 	
-  leg_dimuons_Pt->Draw();
+     leg_dimuons_Pt->Draw();
 
 
 //-----------------------------*---------------------------------------*------------------------------------------//
        
-  c2->cd(3);
+       c2->cd(3);
         
-  //Editando o histograma do Eta
+       //Editando o histograma do Eta
 	
-  h1_Eta->SetLineColor(kRed);
+        h1_Eta->SetLineColor(kRed);
 	
-  h_DimuonsCargasOpostas_Eta->SetLineColor(kBlue);
+        h_DimuonsCargasOpostas_Eta->SetLineColor(kBlue);
 	
 //---------------*---------------------------------------------------*----------------------------------------------------//               
   
-  //Adicionando as legendas
+         //Adicionando as legendas
 	
-  TLegend* leg_dimuons_Eta = new TLegend(0.75,0.81,0.97,0.97);
+          TLegend* leg_dimuons_Eta = new TLegend(0.75,0.81,0.97,0.97);
 	
-  leg_dimuons_Eta->SetFillColor(kWhite);
+          leg_dimuons_Eta->SetFillColor(kWhite);
 	
-  leg_dimuons_Eta->SetFillStyle(1001);
+          leg_dimuons_Eta->SetFillStyle(1001);
 	
-  leg_dimuons_Eta->AddEntry(h_DimuonsCargasOpostas_Eta,"#mu^{+}#mu^{-} ","L");
+           leg_dimuons_Eta->AddEntry(h_DimuonsCargasOpostas_Eta,"#mu^{+}#mu^{-} ","L");
         
-//---------------*---------------------------------------------------*----------------------------------------------------           
+//---------------*---------------------------------------------------*----------------------------------------------------//           
   
-  //Desenhando o histograma do Eta
+             //Desenhando o histograma do Eta
 	
-  h1_Eta->Draw();
+                 h1_Eta->Draw();
 	
-  h_DimuonsCargasOpostas_Eta->Draw("sames");
+                 h_DimuonsCargasOpostas_Eta->Draw("sames");
 	
-  leg_dimuons_Eta->Draw();
+                   leg_dimuons_Eta->Draw();
 	
-//-----------------------------------------------------------------------------------------------------------------------------
+//-----------------------------------------------------------------------------------------------------------------------------//
 	
-  c2->cd(4);
+          c2->cd(4);
          
- //Editando o histograma da rapidez 
+          //Editando o histograma da rapidez 
 	
-  h1_Rapidity->SetLineColor(kRed);
+           h1_Rapidity->SetLineColor(kRed);
 	
-  h_DimuonsCargasOpostas_Rapidity->SetLineColor(kBlue);
+            h_DimuonsCargasOpostas_Rapidity->SetLineColor(kBlue);
 	
  //---------------*---------------------------------------------------*----------------------------------------------------//                 
         
-   //Adicionando a legenda
+           //Adicionando a legenda
        
 	TLegend* leg_dimuons_Rapidity = new TLegend(0.75,0.81,0.97,0.97);
 
-  leg_dimuons_Rapidity->SetFillColor(kWhite);
+        leg_dimuons_Rapidity->SetFillColor(kWhite);
 
-  leg_dimuons_Rapidity->SetFillStyle(1001);
+        leg_dimuons_Rapidity->SetFillStyle(1001);
 	
-  leg_dimuons_Rapidity->AddEntry(h_DimuonsCargasOpostas_Rapidity,"#mu^{+}#mu^{-} ","L");
+        leg_dimuons_Rapidity->AddEntry(h_DimuonsCargasOpostas_Rapidity,"#mu^{+}#mu^{-} ","L");
         
  //---------------*---------------------------------------------------*----------------------------------------------------//           
    
-   //Desenhando o histograma 
+    //Desenhando o histograma 
 	
-   h1_Rapidity->Draw();
+    h1_Rapidity->Draw();
 	
-   h_DimuonsCargasOpostas_Rapidity->Draw("sames");
+    h_DimuonsCargasOpostas_Rapidity->Draw("sames");
 	
-   leg_dimuons_Rapidity->Draw();        
+    leg_dimuons_Rapidity->Draw();        
 }
 
 
