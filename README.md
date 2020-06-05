@@ -422,3 +422,7 @@ void upsilon4()
 Ao executarmos no prompt do ROOT, teremos o seguinte canvas:
 
 ![Histogramas1](https://user-images.githubusercontent.com/62472486/83265225-90d17080-a197-11ea-8805-e6df9b24cc22.png)
+
+Porém as entradas para construir os histogramas se encontram vazias. Com algumas modificações no código, desenvolvi uma novo canvas que desta vez gerou uma entrada. Como na imagem a seguir:
+
+![muons2-1](https://user-images.githubusercontent.com/62472486/83882096-00a3a600-a718-11ea-903c-c6d6009932ec.jpg)
