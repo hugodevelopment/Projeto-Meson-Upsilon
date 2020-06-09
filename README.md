@@ -425,4 +425,43 @@ Ao executarmos no prompt do ROOT, teremos o seguinte canvas:
 
 Porém as entradas para construir os histogramas se encontram vazias. Com algumas modificações no código, desenvolvi uma novo canvas que desta vez gerou uma entrada. Como na imagem a seguir:
 
+
+ A mudança ocorreu porque alterei onde termina o laço do for, neste caso ele termina apos preencher os histogramas na linha 464.
+
+
+
+ for(Long64_t i=0; i<trailingMuon_Pt->size();i++) {
+	
+// ---------------*----------------------------------------------------*----------------------------------------------------
+			
+                        //TLorentz Vector P/ Muon 1   		
+			TLorentzVectorMuons1;
+Muons1.SetPtEtaPhiM(leadingMuon_Pt->at(i), leadingMuon_Eta->at(i), leadingMuon_Phi->at(i), leadingMuon_Mass->at(i),0.0);
+			
+                        
+                        //TLorentz Vector P/ Muon 2 
+                       TLorentzVectorMuons2;
+Muons2.SetPtEtaPhiM(trailingMuon_Pt->at(i), trailingMuon_Eta->at(i), trailingMuon_Phi->at(i), trailingMuon_Mass->at(i),0.0);
+			
+                        
+                        //Calculo das quantidades cinematicas
+			M = (Muons1 + Muons2).Mag();		        //Massa invariante dos pares de muons 
+			
+                        Pt = (Muons1 + Muons2).Pt();                   //Momemtum tranverso o par de muons
+			
+                        Eta = (Muons1 + Muons2).Eta();                //Pseudorapidez(Eta) do par de muons
+			
+                        Rapidity = (Muons1 + Muons2).Rapidity();     //Rapidez P/ o par de muons
+			
+ //---------------*----------------------------------------------------*----------------------------------------------------
+   
+                        
+                        //Preenchendo oa histogramas das variaveis cinematicas 
+			h1_Massa->Fill(M);
+			h1_Pt->Fill(Pt);
+			h1_Eta->Fill(Eta);
+			h1_Rapidity->Fill(Rapidity);
+                        }
+
+
 ![muons2-1](https://user-images.githubusercontent.com/62472486/83882096-00a3a600-a718-11ea-903c-c6d6009932ec.jpg)
