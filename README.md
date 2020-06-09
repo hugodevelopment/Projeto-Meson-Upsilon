@@ -423,15 +423,17 @@ Ao executarmos no prompt do ROOT, teremos o seguinte canvas:
 
 ![Histogramas1](https://user-images.githubusercontent.com/62472486/83265225-90d17080-a197-11ea-8805-e6df9b24cc22.png)
 
-Porém as entradas para construir os histogramas se encontram vazias. Com algumas modificações no código, desenvolvi uma novo canvas que desta vez gerou uma entrada. Como na imagem a seguir:
+Porém as entradas para construir os histogramas se encontram vazias.
 
  * Atualizando *
 
- A mudança ocorreu porque alterei onde termina o laço do for, neste caso ele termina apos preencher os histogramas na linha 464.
+ A mudança ocorreu porque alterei onde termina o laço do for, neste caso ele termina apos preencher os histogramas.
 
 
 // ---------------*----------------------------------------------------*----------------------------------------------------//
-    for(Long64_t i=0; i<trailingMuon_Pt->size();i++) {
+    
+    
+     for(Long64_t i=0; i<trailingMuon_Pt->size();i++) {
 	
 // ---------------*----------------------------------------------------*----------------------------------------------------//
 			
@@ -451,7 +453,7 @@ Porém as entradas para construir os histogramas se encontram vazias. Com alguma
                         
 			//Calculo das quantidades cinematicas
 			
-			M = (Muons1 + Muons2).Mag();		        //Massa invariante dos pares de muons 
+			 M = (Muons1 + Muons2).Mag();		        //Massa invariante dos pares de muons 
 			
                         Pt = (Muons1 + Muons2).Pt();                   //Momemtum tranverso o par de muons
 			
