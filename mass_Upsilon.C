@@ -61,9 +61,9 @@ void mass_Upsilon()
 	h1_Rapidity->SetTitle("Distribuicao Rapidez dos Muons; y ; Eventos ");
 	h1_Rapidity->SetName("h_Dimuons_Rapidity");
         
- //---------------*----------------------------------------------------*----------------------------------------------------
+ //---------------*----------------------------------------------------*----------------------------------------------------//
        //Histogramas para o Dimuons de cargas opostas
-//---------------*----------------------------------------------------*----------------------------------------------------
+//---------------*----------------------------------------------------*----------------------------------------------------//
         
 		//Histograma para a massa invariante com 100 bins e intervalo de 0 a 10
        
@@ -91,7 +91,6 @@ void mass_Upsilon()
 //---------------*----------------------------------------------------*----------------------------------------------------
 
                  //Acessando o arquivo root.file
-         
 		 TFile *f = new TFile("data_histoall.root");	
 	         TTree *t = (TTree*) f->Get("demo/AnalysisTree");	
 		 
@@ -135,33 +134,22 @@ Muons2.SetPtEtaPhiM(trailingMuon_Pt->at(i), trailingMuon_Eta->at(i), trailingMuo
 
 M = (Muons1 + Muons2).Mag();		            //Massa invariante dos pares de muons 
 			
-Pt = (Muons1 + Muons2).Pt();                   //Momemtum tranverso o par de muons
+Pt = (Muons1 + Muons2).Pt();                      //Momemtum tranverso o par de muons
 			
-Eta = (Muons1 + Muons2).Eta();                //Pseudorapidez(Eta) do par de muons
+Eta = (Muons1 + Muons2).Eta();                   //Pseudorapidez(Eta) do par de muons
 			
-Rapidity = (Muons1 + Muons2).Rapidity();     //Rapidez P/ o par de muons
+Rapidity = (Muons1 + Muons2).Rapidity();      //Rapidez P/ o par de muons
 			
  //---------------*----------------------------------------------------*----------------------------------------------------//
-   
-                        
                         //Preenchendo oa histogramas das variaveis cinematicas 
-			
 	                h1_Massa->Fill(M);
 			h1_Pt->Fill(Pt);
 			h1_Eta->Fill(Eta);
-			h1_Rapidity->Fill(Rapidity);
-                        
-     }
-                
-                        
+			h1_Rapidity->Fill(Rapidity);                   
+                    }        
 //------------------------------------------------*--------------------------------*------------------------------------------//                       
-
-	 
 	 // loop para a carga 
-	
-	
          // Se leadingMuon_Charge for diferente de trailingMuon_Charge, continuar
-
 	if ( leadingMuon_Charge->at(i) != trailingMuon_Charge->at(i) )  
 			
                                 {
@@ -170,13 +158,9 @@ Rapidity = (Muons1 + Muons2).Rapidity();     //Rapidez P/ o par de muons
 				h_DimuonsCargasOpostas_Eta->Fill(Eta);
 				h_DimuonsCargasOpostas_Rapidity->Fill(Rapidity);
                                 }
-
-
-
-// ----------*----------------------------------------------------*----------------------------------------------------
+// ----------*----------------------------------------------------*--------------------------------------------------------//
         
 	//Criando o Canvas
-	
 	TCanvas* c2 = new TCanvas("c2","Canvas 2 - behavior of the dimuons after quality selection",1200,600);
 	c2->Divide(2,2);
 	c2->cd(1);
@@ -218,8 +202,7 @@ Rapidity = (Muons1 + Muons2).Rapidity();     //Rapidez P/ o par de muons
 	leg_dimuons_Pt->Draw();
 
 
-//-----------------------------*---------------------------------------*------------------------------------------
-       
+//-----------------------------*---------------------------------------*------------------------------------------//
         c2->cd(3);
         
 	//Editando o histograma do Eta
@@ -240,7 +223,7 @@ Rapidity = (Muons1 + Muons2).Rapidity();     //Rapidez P/ o par de muons
 	h_DimuonsCargasOpostas_Eta->Draw("sames");
 	leg_dimuons_Eta->Draw();
 	
-//-----------------------------------------------------------------------------------------------------------------------------
+//-----------------------------------------------------------------------------------------------------------------------------//
 	c2->cd(4);
          //Editando o histograma da rapidez 
 	h1_Rapidity->SetLineColor(kRed);
