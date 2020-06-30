@@ -20,3 +20,6 @@ Como as grandezas momemtum e energia são conservadas nas colisões de partícul
 
 Um histograma da massa invariante da partícula Meson Upsilon ao decair em pares de dimuons pode ser visto a seguir:
 
+https://github.com/Hugox96/Projeto-Meson-Upsilon/issues/1#issue-648238204
+
+Fonte: https://cms.cern/news/first-measurement-upsilon-production-7-tev-lhc
