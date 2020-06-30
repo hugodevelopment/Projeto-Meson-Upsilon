@@ -26,11 +26,7 @@ void mass_Upsilon()
 	std::vector<double>* trailingMuon_Mass =  0.;
         std::vector<int>* trailingMuon_Charge  =  0.;        
 
-        
-         //TLorentzVector P/ os Dimuons
-     	 TLorentzVector Muons1;
-         TLorentzVector Muons2;
-
+   
         //Quantidades Cinematicas     
 	 double M = 0.;
 	 double Pt = 0.;
