@@ -11,7 +11,7 @@
 void mass_Upsilon()
 {
  
- // ---------------*----------------------------------------------------*----------------------------------------------------  
+ // ---------------*----------------------------------------------------*---------------------------------------------------- // 
  
         //Declarando as variaveis
         std::vector<double>* leadingMuon_Pt =    0.;
@@ -32,28 +32,31 @@ void mass_Upsilon()
          TLorentzVector Muons2;
 
         //Quantidades Cinematicas     
-    
-	double M = 0.;
-	double Pt = 0.;
-	double Eta = 0.;
-	double Rapidity = 0.;
+	 double M = 0.;
+	 double Pt = 0.;
+	 double Eta = 0.;
+	 double Rapidity = 0.;
 
-
+// ---------------*----------------------------------------------------*---------------------------------------------------- //
         //Criando os histogramas para as quantidades cinematicas
-//---------------*---------------------------------------------------*----------------------------------------------------         
+         
         // Histograma para a massa invanriante com 100 bins e intervalo de 7 a 13
-        TH1F* h1_Massa = new TH1F("h_Dimuons_Mass","h_Dimuons_M",100,7,13);
+        
+	TH1F* h1_Massa = new TH1F("h_Dimuons_Mass","h_Dimuons_M",100,7,13);
 	h1_Massa->SetTitle("Distribuicao Massa Invariante dos Dimuons; #mu#mu [GeV] ; Eventos ");
 	h1_Massa->SetName("h_Dimuons_M");
-        //Histograma para o momemtum tranversal com 100 bins e intervalo de 0 a 50
+        
+	//Histograma para o momemtum tranversal com 100 bins e intervalo de 0 a 50
 	TH1F* h1_Pt = new TH1F("h_Dimuons_Pt","h_Dimuons_Pt",100,0,50);
 	h1_Pt->SetTitle("Distribuicao Pt dos Dimuons; #mu#mu p_{T} [GeV] ; Eventos ");
 	h1_Pt->SetName("h_Dimuons_Pt");
-        //Histograma para o eta com 100 bins e intervalo de -4 a 4 
+        
+	//Histograma para o eta com 100 bins e intervalo de -4 a 4 
         TH1F* h1_Eta = new TH1F("h_Dimuons_Eta","h_Dimuons_Eta",100,-4,4);
 	h1_Eta->SetTitle("Distribuicao Pseudo-Rapidez dos Dimuons; #eta ; Eventos ");
 	h1_Eta->SetName("h_Dimuons_Eta");
-        //Histograma para a massa a rapidez com intervalo de -4 a 4
+        
+	//Histograma para a massa a rapidez com intervalo de -4 a 4
 	TH1F* h1_Rapidity = new TH1F("h_Dimuons_Rapidity","h_Dimuons_Rapidity",100,-4,4);
 	h1_Rapidity->SetTitle("Distribuicao Rapidez dos Muons; y ; Eventos ");
 	h1_Rapidity->SetName("h_Dimuons_Rapidity");
@@ -73,7 +76,8 @@ void mass_Upsilon()
 	TH1F* h_DimuonsCargasOpostas_Pt = new TH1F("h_DimuonsOppositeCharge_Pt","h_DimuonsOppositeCharge_Pt",100,0,50);
 	h_DimuonsCargasOpostas_Pt->SetTitle("Distribuicao Pt dos muons; #mu#mu p_{T} [GeV] ; Eventos ");
 	h_DimuonsCargasOpostas_Pt->SetName("h_DimuonsOppositeCharge_Pt");
-        // Histograma para o Eta com 100 bins e intervalo -4 a 4
+        
+	       // Histograma para o Eta com 100 bins e intervalo -4 a 4
 	
 	TH1F* h_DimuonsCargasOpostas_Eta = new TH1F("h_DimuonsOppositeCharge_Eta","h_DimuonsOppositeCharge_Eta",100,-4,4);
 	h_DimuonsCargasOpostas_Eta->SetTitle("Distribuicao Pseudo-Rapidez dos Dimuons; #eta ; Eventos ");
@@ -86,10 +90,10 @@ void mass_Upsilon()
 	h_DimuonsCargasOpostas_Rapidity->SetName("h_DimuonsOppositeCharge_Rapidity");
 //---------------*----------------------------------------------------*----------------------------------------------------
 
-       //Acessando o arquivo root.file
+                 //Acessando o arquivo root.file
          
 		 TFile *f = new TFile("data_histoall.root");	
-	     TTree *t = (TTree*) f->Get("demo/AnalysisTree");	
+	         TTree *t = (TTree*) f->Get("demo/AnalysisTree");	
 		 
 // ---------------*----------------------------------------------------*----------------------------------------------------
     
@@ -115,7 +119,7 @@ void mass_Upsilon()
 
      for(Long64_t i=0; i<trailingMuon_Pt->size();i++) {
 	
-// ---------------*----------------------------------------------------*----------------------------------------------------
+// ---------------*----------------------------------------------------*----------------------------------------------------//
 			
                         //TLorentz Vector P/ Muon 1   		
 			TLorentzVectorMuons1;
@@ -137,21 +141,28 @@ Eta = (Muons1 + Muons2).Eta();                //Pseudorapidez(Eta) do par de muo
 			
 Rapidity = (Muons1 + Muons2).Rapidity();     //Rapidez P/ o par de muons
 			
- //---------------*----------------------------------------------------*----------------------------------------------------
+ //---------------*----------------------------------------------------*----------------------------------------------------//
    
                         
                         //Preenchendo oa histogramas das variaveis cinematicas 
-			h1_Massa->Fill(M);
+			
+	                h1_Massa->Fill(M);
 			h1_Pt->Fill(Pt);
 			h1_Eta->Fill(Eta);
 			h1_Rapidity->Fill(Rapidity);
-                        }
+                        
+     }
                 
-                        // loop para a carga 
-------------------------------------------------*--------------------------------*----------------------                       
+                        
+//------------------------------------------------*--------------------------------*------------------------------------------//                       
 
-// Se leadingMuon_Charge for diferente de trailingMuon_Charge, continuar
-if ( leadingMuon_Charge->at(i) != trailingMuon_Charge->at(i) )  
+	 
+	 // loop para a carga 
+	
+	
+         // Se leadingMuon_Charge for diferente de trailingMuon_Charge, continuar
+
+	if ( leadingMuon_Charge->at(i) != trailingMuon_Charge->at(i) )  
 			
                                 {
 				h_DimuonsCargasOpostas_M->Fill(M);
@@ -163,7 +174,9 @@ if ( leadingMuon_Charge->at(i) != trailingMuon_Charge->at(i) )
 
 
 // ----------*----------------------------------------------------*----------------------------------------------------
-        //Creating Canvas
+        
+	//Criando o Canvas
+	
 	TCanvas* c2 = new TCanvas("c2","Canvas 2 - behavior of the dimuons after quality selection",1200,600);
 	c2->Divide(2,2);
 	c2->cd(1);
@@ -185,7 +198,7 @@ if ( leadingMuon_Charge->at(i) != trailingMuon_Charge->at(i) )
         
         
 
-        c2->cd(2);
+         c2->cd(2);
 
         //Editando o histograma da momemtum transversal 
 	h1_Pt->SetLineColor(kRed);
@@ -208,17 +221,21 @@ if ( leadingMuon_Charge->at(i) != trailingMuon_Charge->at(i) )
 //-----------------------------*---------------------------------------*------------------------------------------
        
         c2->cd(3);
-        //Editando o histograma do Eta
+        
+	//Editando o histograma do Eta
+	
 	h1_Eta->SetLineColor(kRed);
 	h_DimuonsCargasOpostas_Eta->SetLineColor(kBlue);
 	
         //Adicionando as legendas
+	
 	TLegend* leg_dimuons_Eta = new TLegend(0.75,0.81,0.97,0.97);
 	leg_dimuons_Eta->SetFillColor(kWhite);
 	leg_dimuons_Eta->SetFillStyle(1001);
 	leg_dimuons_Eta->AddEntry(h_DimuonsCargasOpostas_Eta,"#mu^{+}#mu^{-} ","L");
         
        //Desenhando o histograma do Eta
+	
 	h1_Eta->Draw();
 	h_DimuonsCargasOpostas_Eta->Draw("sames");
 	leg_dimuons_Eta->Draw();
