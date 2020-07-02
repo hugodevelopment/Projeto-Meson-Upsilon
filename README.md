@@ -10,7 +10,7 @@ Meson Upsilon ao final.
 
  2) A Massa Invariante 
  
-A massa invariante  ́e uma grandeza muito importante a ser estudada na analise da dados em física de partıculas. Isso porque ela  ́e calculada a partir de grandezas f ́ısicas conservativas, sendo essas momentum(p) e a energia(E) da partícula ao qual estamos interessados em estudar.
+A massa invariante é uma grandeza muito importante a ser estudada na analise da dados em física de partıculas. Isso porque ela é calculada a partir de grandezas fısicas conservativas, sendo essas momentum(p) e a energia(E) da partícula ao qual estamos interessados em estudar.
 
 Quando uma partícula decai e, portanto, não existe mais, sua massa antes do decaimento pode ser calculada a partir das energias e momentos dos produtos de decaimento. O valor inferido da massa é independente do referencial em que as energias e os momentos são medidos, de modo que a massa é denominada "invariante". 
 
