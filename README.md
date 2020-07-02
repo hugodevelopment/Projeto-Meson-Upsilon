@@ -1,8 +1,6 @@
 # Projeto-Meson-Upsilon
-Projetos desenvolvidos para a iniciação cientifícia em fisica de altas energias no ramo de fisica de partículas.
 
-Esta macro foi desenvolvida para determinar a massa invariante da partícula meson upsilon. Especificarei abaixo como o estudo esta sendo 
-elaborado. 
+## Projetos desenvolvidos para a iniciação cientifícia em fisica de altas energias no ramo de fisica de partículas.Esta macro foi desenvolvida para determinar a massa invariante da partícula meson upsilon. Especificarei abaixo como o estudo esta sendo elaborado. 
 
 1) A Particula Meson Upsilon
 
