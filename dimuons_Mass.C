@@ -26,15 +26,16 @@ void dimuon::GetSpectrum() {
   // Checando a tree
   if (fChain == 0) return;
 
-  // Criando um simples histograma de massa
+  // Criando um simples histograma da massa
   TH1F *hDimuonMass_normal = new TH1F("hDimuonMass","hDimuonMass",10000,7,14);
   FillHisto(hDimuonMass);
   SaveHisto(hDimuonMass);
 
-  // Escalas logaritimica
+  // Escalas logaritimicas
   SaveHisto(hDimuonMass,kTRUE);
 
-  //define another (special) histogram: with variable (!) bin widths 
+  // define outro histograma (especial): com larguras variáveis de bin (!)
+  
   double xbins[100000];
   xbins[0] = .1; 
   int nbins = 0;
@@ -70,8 +71,8 @@ void dimuon::SaveHisto(TH1F* hist, Int_t log) {
   TCanvas *canvas = new TCanvas("canvas","canvas",800,600);
 
   if(log) {
-    c->SetLogx();
-    c->SetLogy();
+    canvas->SetLogx();
+    canvas->SetLogy();
   }
 
   hist->Draw("HIST");
@@ -158,8 +159,7 @@ void dimuon::FitPeak() {
 	 par[1],f->GetParErrors()[1]);
 
 
-
-  // what follows is aesthetics, mostly ...
+  //O que se segue é estética, principalmente ...
 
   gROOT->LoadMacro("tdrstyle.C");
 
@@ -175,7 +175,8 @@ void dimuon::FitPeak() {
 
   hpeak->Fit("f","V+","ep");
 
-  //Definindo funcoes individuais para cada representacao
+  //Definindo funções individuais para cada representação
+  
   TF1 *signalFcn = new TF1("signalFcn",signal,_mmin,_mmax,3);
   signalFcn->SetLineColor(kBlue);
   signalFcn->SetNpx(500);
@@ -190,6 +191,7 @@ void dimuon::FitPeak() {
   backFcn->Draw("same");
     
   // Escrevendo as legendas
+  
   TLegend *legend=new TLegend(0.7,0.65,0.88,0.85);
   legend->SetBorderSize(0);
   legend->SetTextFont(40);
@@ -201,6 +203,7 @@ void dimuon::FitPeak() {
   legend->Draw("same");
 
   // Resultados do ajuste
+  
   TLatex L;
   L.SetNDC();
   L.SetTextSize(0.04);
@@ -212,18 +215,20 @@ void dimuon::FitPeak() {
   L.DrawLatex(0.15,0.65,Form("with: %5.3f #pm %5.3f MeV/c^{2}", 
 			     par[2]*1000, f->GetParErrors()[2]*1000));
 
-  // Salva o histograma com a funcao de ajuste
+  // Salva o histograma com a função de ajuste
   canvas0->SaveAs("plots/mypeak.png");
 
 }
 
 
 Double_t signal(Double_t *x, Double_t *par) {
+  
   // Uma simples gaussiana
   return par[0]*exp(-0.5*TMath::Power(((x[0]-par[1])/(par[2])),2)); 
 }
 
 Double_t backgr(Double_t *x, Double_t *par) {
+  
   // Uma simples polinominal
   return par[0]+par[2]*x[0];
 }
