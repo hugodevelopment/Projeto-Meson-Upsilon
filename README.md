@@ -1,6 +1,6 @@
 # Projeto-Meson-Upsilon
 
-## Projetos desenvolvidos para a iniciação cientifíca em física de altas energias no ramo de física de partículas. No qual visa determinar a massa invariante da partícula meson upsilon. 
+## Projetos desenvolvidos para a iniciação cientifíca em física de altas energias no ramo de física de partículas. No qual visa determinar a massa invariante da partícula Meson Upsilon. 
 
 ### 1) A Particula Meson Upsilon
 
