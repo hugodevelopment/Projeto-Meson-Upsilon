@@ -1,11 +1,11 @@
 # Projeto-Meson-Upsilon
 
-## Projetos desenvolvidos para a iniciação cientifíca em física de altas energias no ramo de física de partículas. No qual visa determinar a massa invariante da partícula Meson Upsilon. 
+## Projeto desenvolvido para a iniciação cientifíca em física de altas energias no ramo de física de partículas. No qual visa determinar a massa invariante da partícula Meson Upsilon(Y). 
 
 ### 1) A Particula Meson Upsilon
 
-O Meson Upsilon (Υ), é uma partícula constituida por um quark bottom e um antiquark bottom. Seu decaimento pode ocorrer em dimuons(pares de muons de cargas opostas),
-sua massa é aproximadamente 9,46030 GeV/c². No caso da macro, haverá um loop que terá a função de selecionar os dimuons para determinar a massa invariante do 
+O Meson Upsilon (Υ) é uma partícula constituida por um quark bottom e um antiquark bottom. Seu decaimento pode ocorrer em dimuons(pares de múons de cargas opostas), sendo esta a base do nosso estudo.
+Sua massa é aproximadamente <b>9,46030 GeV/c²</b>. No código haverá um loop que terá a função de selecionar os dimuons para determinar a massa invariante do 
 Meson Upsilon ao final.
 
  ### 2) A Massa Invariante 
@@ -18,6 +18,6 @@ Como as grandezas momemtum e energia são conservadas nas colisões de partícul
 
 Um histograma da massa invariante da partícula Meson Upsilon ao decair em pares de dimuons pode ser visto a seguir:
 
-![meson](https://user-images.githubusercontent.com/62472486/86185351-885cb480-bb0c-11ea-8ed1-614f43fa2c79.gif)
+                      ![meson](https://user-images.githubusercontent.com/62472486/86185351-885cb480-bb0c-11ea-8ed1-614f43fa2c79.gif)
 
 Fonte: https://cms.cern/news/first-measurement-upsilon-production-7-tev-lhc
