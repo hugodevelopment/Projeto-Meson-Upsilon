@@ -24,4 +24,5 @@ Fonte: https://cms.cern/news/first-measurement-upsilon-production-7-tev-lhc
 
 Após a execução do código no software de análise de dados ROOT, o histograma da massa invariante é gerado. A seguir o plot:
 
+![massa_invariante_2](https://user-images.githubusercontent.com/62472486/96740570-56ab7a00-1397-11eb-8f11-fd8290d04084.jpg)
 
