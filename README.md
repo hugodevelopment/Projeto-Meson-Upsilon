@@ -21,3 +21,7 @@ Um histograma da massa invariante da partícula Meson Upsilon ao decair em pares
    ![meson](https://user-images.githubusercontent.com/62472486/86185351-885cb480-bb0c-11ea-8ed1-614f43fa2c79.gif)
 
 Fonte: https://cms.cern/news/first-measurement-upsilon-production-7-tev-lhc
+
+Após a execução do código no software de análise de dados ROOT, o histograma da massa invariante é gerado. A seguir o plot:
+
+
