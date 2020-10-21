@@ -9,7 +9,7 @@
 #include "TFitResult.h"
 #include "TLegend.h"
 #include "TLatex.h"
-#include "FitFunctions.h" //You should download the file
+#include "FitFunctions.h" 
 
 using namespace std;
 
@@ -19,13 +19,7 @@ Double_t Signal(Double_t *x, Double_t *par) {
   return Gaus(x,par) + Gaus(x, &par[3]) + Gaus(x, &par[6]);
 }
 
-
-
-
-
-
 // Codigo para criar o histograma da massa invariante presente no arquivo Run2011A_MuOnia_Upsilon.root.
-
 void massa_invariante2(){
 	
 
@@ -54,9 +48,6 @@ void massa_invariante2(){
         t->SetBranchAddress("FailingProbeGlobalMuon",	         &FailingProbeGlobalMuon);
       
 	//Cria os histogramas selecionados
-        
-        
-       
 	TH1F *h1 = new TH1F("InvariantMass","Invariant Mass;Mass_{#mu^{+}#mu^{-}} (GeV); Counts ",100 ,8,12.2);
 
 	 Long64_t nentries = t->GetEntries();
@@ -82,9 +73,10 @@ void massa_invariante2(){
           // Canvas p/o histograma  
           h1->SetLineColor(kBlue);
         
-
+        //Criando a função p/ o ajuste
         TF1 *f = new TF1("f",Signal,7.,14.,13);
 	
+	// Definindo os parametros
         f->SetParName(0,	"Gaus(1S) a (altura)");
 	f->SetParName(1,	"Gaus(1S) b (posicao)");
 	f->SetParName(2,	"Gaus(1S) c (largura)");
@@ -96,29 +88,27 @@ void massa_invariante2(){
 	f->SetParName(8,	"Gaus(3S) c (largura)");
         f->SetNpx(1000);	//Resolucao da funcao
 
-        //Valor Y(1S)
+        //Parametros para o primeiro estado Y(1S)
 	f->SetParameter(0, 2.0);
 	f->FixParameter(1, 9.4603); //Valor da massa primeiro pico 
 	f->SetParameter(2, 1300.0);
-
-
-        
-	//Values Y(2S)
+	
+	//Parametros para o segundo estado Y(2S)
 	f->SetParameter(3, 2.0);
 	f->FixParameter(4, 10.02326); //Valor da massa segundo pico
 	f->SetParameter(5, 100.0);
 
-	//Values Y(3S)
+	//Paramentros para o terceiro estado Y(3S)
 	f->SetParameter(6, 2.0);
 	f->FixParameter(7, 10.3552); //Valor da massa terceiro pico
 	f->SetParameter(8, 50.0); 
 
-        f->SetLineColor(kBlue); 	//Fit Color
+        f->SetLineColor(kBlue); //Fit Color
 
-	//Fit the function
+	//Função de ajuste
 	TFitResultPtr fitr = h1->Fit(f,"RNS","",7.,14.);
  
-        //Draws
+        //Desenha o histograma em pontos 
 	h1->Draw("ep");
 	f->Draw("same");
 
@@ -127,8 +117,6 @@ void massa_invariante2(){
 	tx->SetTextAlign(12);
 	tx->SetTextFont(42);
 	tx->SetNDC(kTRUE);
-
-	
 	
 	c1->SaveAs("InvariantMass.png");	
 }
