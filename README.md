@@ -16,6 +16,8 @@ Quando uma partícula decai e, portanto, não existe mais, sua massa antes do de
 
 Como as grandezas momemtum e energia são conservadas nas colisões de partículas nos aceleradores, podemos utilizá-las para, a partir delas, calcular a massa invariante de uma partícula.
 
+![E_rel14](https://user-images.githubusercontent.com/62472486/96741268-fe28ac80-1397-11eb-92c2-151c79df85e8.png)
+
 Um histograma da massa invariante da partícula Meson Upsilon ao decair em pares de dimuons pode ser visto a seguir:
 
    ![meson](https://user-images.githubusercontent.com/62472486/86185351-885cb480-bb0c-11ea-8ed1-614f43fa2c79.gif)
