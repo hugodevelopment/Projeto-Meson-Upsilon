@@ -17,13 +17,13 @@ Quando uma partícula decai e, portanto, não existe mais, sua massa antes do de
 Como as grandezas momemtum e energia são conservadas nas colisões de partículas nos aceleradores, podemos utilizá-las para, a partir delas, calcular a massa invariante de uma partícula.
 
 <p align="center">
-  <img width="220" height="110" src= "https://user-images.githubusercontent.com/62472486/96741268-fe28ac80-1397-11eb-92c2-151c79df85e8.png">
+  <img width="215" height="90" src= "https://user-images.githubusercontent.com/62472486/96741268-fe28ac80-1397-11eb-92c2-151c79df85e8.png">
 </p>
 
 Um histograma da massa invariante da partícula Meson Upsilon ao decair em pares de dimuons pode ser visto a seguir:
 
 <p align="center">
-  <img width="450" height="300" src= "https://user-images.githubusercontent.com/62472486/86185351-885cb480-bb0c-11ea-8ed1-614f43fa2c79.gif">
+  <img width="400" height="300" src= "https://user-images.githubusercontent.com/62472486/86185351-885cb480-bb0c-11ea-8ed1-614f43fa2c79.gif">
 </p>
 
 
@@ -31,5 +31,6 @@ Fonte: https://cms.cern/news/first-measurement-upsilon-production-7-tev-lhc
 
 Após a execução do código no software de análise de dados ROOT, o histograma da massa invariante é gerado. A seguir o plot:
 
-![massa_invariante_2](https://user-images.githubusercontent.com/62472486/96740570-56ab7a00-1397-11eb-8f11-fd8290d04084.jpg)
-
+<p align="center">
+<img width="400" height="300" src="https://user-images.githubusercontent.com/62472486/96740570-56ab7a00-1397-11eb-8f11-fd8290d04084.jpg"
+</p>
